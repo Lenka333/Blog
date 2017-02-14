@@ -1,0 +1,16 @@
+<h1>Article # <%= @article.id %></h1>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+<p>
+<%= link_to 'Add another article', new_article_path %>
+</p>
+<p>
+<%= link_to 'View all articles', articles_path %>
+</p>
