@@ -1,0 +1,13 @@
+%h1 Article
+=@article.id
+%p
+  %strong Title: 
+  =@article.title
+ 
+%p
+  %strong Text: 
+  =@article.text
+%p
+= link_to 'Add another article', new_article_path
+%p
+= link_to 'View all articles', articles_path
