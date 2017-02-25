@@ -16,6 +16,8 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 	end
 
+	# edit
+
 	def create
 		# binding.pry
 		#test change
@@ -38,6 +40,8 @@ def update
 		render 'edit'
 	end
 end
+
+# update
 
 	private
 		def article_params
