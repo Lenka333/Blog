@@ -1,6 +1,7 @@
-%h1 Add a new Article
+%h1 Edit Article id =@article.id
 
-= form_for :article, url: articles_path do |f|
+= form_for :article, url: article_path(@article), method: :patch do |f| 
+
   - if @article.errors.any?
     #error_explanation
       %h2
@@ -9,6 +10,7 @@
       %ul
         - @article.errors.full_messages.each do |msg|
           %li= msg
+          
   %p
     = f.label :title 
     %br/
@@ -19,5 +21,5 @@
     = f.text_area :text
   %p
     = f.submit
-  
+
 = link_to 'Back', articles_path
