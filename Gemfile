@@ -37,6 +37,9 @@ gem 'haml'
 
 # to Rails also comes with built-in help
 gem 'redcarpet', '~> 3.1.2'
+gem 'RedCloth'
+#gem 'Nokogiri'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
