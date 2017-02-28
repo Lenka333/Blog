@@ -9,7 +9,8 @@ RSpec.describe Article, type: :model do
 
 	it 'is not valid with less then 5 characters' do
 		article = Article.new(title: 'fewe')
-		expect(article.valid?).to be(false)
+		#article.valid?
+		expect(article.errors.message[:title]).to include("is too short (minimum is 5 characters)")
 	end
 
 	it 'is not valid without title' do
