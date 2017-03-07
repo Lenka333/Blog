@@ -1,6 +1,6 @@
 FactoryGirl.define do
     factory :article do
-      title "How to install Factory Girl"
-      text  "Doe"
+      title {Faker::Name.title}
+      text  {Faker::Lorem.paragraph}
     end
   end
