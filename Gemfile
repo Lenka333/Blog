@@ -47,6 +47,13 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
+
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pry-remote'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
 end
 
 group :development do
@@ -57,12 +64,7 @@ group :development do
   gem 'spring'
 
   # Used for debugging 
-  gem 'pry'
-	gem 'pry-byebug'
-	gem 'pry-rails'
-	gem 'pry-remote'
-	gem 'pry-rescue'
-	gem 'pry-stack_explorer'
+ 
 
 	
 end
