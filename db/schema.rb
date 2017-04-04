@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226015211) do
+ActiveRecord::Schema.define(version: 20170404070647) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.datetime "published_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -29,5 +37,20 @@ ActiveRecord::Schema.define(version: 20170226015211) do
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
+
+  create_table "notes", force: :cascade do |t|
+    t.integer  "noteable_id"
+    t.string   "noteable_type"
+    t.text     "content"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "articles_id"
+    t.string   "articles_type"
+    t.integer  "books_id"
+    t.string   "books_type"
+  end
+
+  add_index "notes", ["articles_type", "articles_id"], name: "index_notes_on_articles_type_and_articles_id"
+  add_index "notes", ["books_type", "books_id"], name: "index_notes_on_books_type_and_books_id"
 
 end

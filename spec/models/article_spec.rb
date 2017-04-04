@@ -16,5 +16,6 @@ RSpec.describe Article, type: :model do
 	it 'is not valid without title' do
 		article = Article.new(title: '')
 		expect(article).to_not be_valid
+		expect()
 	end
 end
